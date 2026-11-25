@@ -1,0 +1,16 @@
+# dependencies and builds
+node_modules/
+dist/
+
+# secrets: never commit (templates: dashboard/.env.example, receiver/secrets.example.h)
+.env
+receiver/secrets.h
+
+# local tool state
+.gemini/
+**/.impeccable/config.local.json
+**/.impeccable/mocks/
+**/.impeccable/review/
+
+# old project archives
+*.zip

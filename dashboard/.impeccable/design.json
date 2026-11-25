@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-24T00:00:00Z",
+  "title": "Design System: Asset Tracker",
+  "extensions": {
+    "colorMeta": {
+      "red": { "role": "primary", "displayName": "Utility Red", "canonical": "#D7261E", "tonalRamp": ["#3D0A08", "#6E120E", "#B01E17", "#D7261E", "#E8645E", "#F2A29E", "#F8CFCC", "#FCEBEA"] },
+      "red-ink": { "role": "primary", "displayName": "Deep Red Ink", "canonical": "#B01E17" },
+      "red-tint": { "role": "primary", "displayName": "Red Tint", "canonical": "#FCEBEA" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#111316", "tonalRamp": ["#111316", "#2E3238", "#4F555D", "#6B7179", "#9AA0A7", "#C9CDD3", "#E6E8EB", "#F3F4F6"] },
+      "ink-2": { "role": "neutral", "displayName": "Graphite", "canonical": "#4F555D" },
+      "ink-3": { "role": "neutral", "displayName": "Slate", "canonical": "#6B7179" },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#FFFFFF" },
+      "grey": { "role": "neutral", "displayName": "Head Grey", "canonical": "#E6E8EB" },
+      "grey-2": { "role": "neutral", "displayName": "Quiet Grey", "canonical": "#F3F4F6" },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#C9CDD3" },
+      "ok": { "role": "state", "displayName": "Tracking Green", "canonical": "#1E7F3C", "tonalRamp": ["#0A2B14", "#124D24", "#1E7F3C", "#3A9D58", "#6DBA85", "#A3D5B2", "#CDE8D5", "#E6F3EA"] },
+      "ok-tint": { "role": "state", "displayName": "Green Tint", "canonical": "#E6F3EA" },
+      "warn": { "role": "state", "displayName": "Ambiguous Amber", "canonical": "#9A6412", "tonalRamp": ["#332106", "#5E3D0B", "#9A6412", "#BF8429", "#D6A75E", "#E8C995", "#F4E2C4", "#FBF1DF"] },
+      "warn-tint": { "role": "state", "displayName": "Amber Tint", "canonical": "#FBF1DF" },
+      "focus": { "role": "state", "displayName": "Focus Blue", "canonical": "#1D5FD1" },
+      "sel": { "role": "state", "displayName": "Selection Blue", "canonical": "#EAF1FC" }
+    },
+    "typographyMeta": {
+      "figure": { "displayName": "Figure", "purpose": "Glanceable counts in KPI strips and readout cells (36px live calibration reading, 20px zone counts)." },
+      "brand": { "displayName": "Brand", "purpose": "Wordmark only." },
+      "title": { "displayName": "Title", "purpose": "Selected tag name, expanded row name, clock (15-18px)." },
+      "body": { "displayName": "Body", "purpose": "Tables, lists, settings. Tabular numerals." },
+      "label": { "displayName": "Label", "purpose": "Table heads, buttons, pills; hints and legends at 400." },
+      "module-tab": { "displayName": "Module Tab", "purpose": "Uppercase title inside the red module tab and the in-module sub-head rule." },
+      "micro": { "displayName": "Micro", "purpose": "ID sub-lines, chart ticks, map sub-labels." },
+      "mono": { "displayName": "Mono", "purpose": "Tag IDs only." }
+    },
+    "shadows": [
+      { "name": "tab-cap", "value": "inset 0 3px 0 var(--red)", "purpose": "Red cap on the active section tab (2px on sub-tabs). Not elevation." },
+      { "name": "input-halo", "value": "0 0 0 2px var(--sel)", "purpose": "Focus halo on inline edit and search inputs. Not elevation." }
+    ],
+    "motion": [
+      { "name": "control-state", "value": "150ms ease-out", "purpose": "Button background and colour on hover." },
+      { "name": "progress", "value": "400ms linear", "purpose": "Calibration progress bar width." },
+      { "name": "reduced-motion", "value": "transition: none", "purpose": "All transitions removed under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "two-column", "value": "1240px" },
+      { "name": "stack", "value": "900px" },
+      { "name": "phone", "value": "480px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Module",
+      "kind": "card",
+      "refersTo": "module",
+      "description": "Signature ruled module: grey head strip with a solid red tab title, meta on the right, white body.",
+      "html": "<section class=\"ds-m\"><header class=\"ds-mh\"><h2>Assets<small>12 tags</small></h2><div class=\"ds-meta\">Updated 1 s ago</div></header><div class=\"ds-mb\">Module body</div></section>",
+      "css": ".ds-m { border: 1px solid var(--line, #C9CDD3); background: var(--paper, #fff); font: 400 13px/1.5 'Noto Sans', system-ui, sans-serif; color: var(--ink, #111316); } .ds-mh { display: flex; align-items: center; min-height: 28px; background: var(--grey, #E6E8EB); border-bottom: 1px solid var(--line, #C9CDD3); } .ds-mh h2 { margin: 0; align-self: stretch; display: flex; align-items: center; gap: 8px; padding: 0 10px; background: var(--red, #D7261E); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; } .ds-mh h2 small { font-weight: 400; letter-spacing: 0; text-transform: none; opacity: 0.9; } .ds-meta { margin-left: auto; padding: 0 10px; color: var(--ink-2, #4F555D); font-size: 12px; } .ds-mb { padding: 10px; }"
+    },
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Default square button with ink border.",
+      "html": "<button class=\"ds-btn\">Export</button>",
+      "css": ".ds-btn { height: 28px; padding: 0 12px; border: 1px solid var(--ink, #111316); background: var(--paper, #fff); color: var(--ink, #111316); font: 700 12px 'Noto Sans', system-ui, sans-serif; border-radius: 0; cursor: pointer; transition: background 150ms ease-out, color 150ms ease-out; } .ds-btn:hover { background: var(--grey, #E6E8EB); } .ds-btn:focus-visible { outline: 2px solid var(--focus, #1D5FD1); outline-offset: 1px; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink-filled button for the one main action in a context.",
+      "html": "<button class=\"ds-btn-p\">Calibrate</button>",
+      "css": ".ds-btn-p { height: 28px; padding: 0 12px; border: 1px solid var(--ink, #111316); background: var(--ink, #111316); color: #fff; font: 700 12px 'Noto Sans', system-ui, sans-serif; border-radius: 0; cursor: pointer; transition: background 150ms ease-out; } .ds-btn-p:hover { background: #2E3238; } .ds-btn-p:focus-visible { outline: 2px solid var(--focus, #1D5FD1); outline-offset: 1px; }"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Red confirm step of a two-step destructive action.",
+      "html": "<span class=\"ds-confirm\"><button class=\"ds-btn-d\">Delete tag</button><button class=\"ds-btn-q\">Cancel</button></span>",
+      "css": ".ds-confirm { display: inline-flex; gap: 6px; } .ds-btn-d, .ds-btn-q { height: 28px; padding: 0 12px; font: 700 12px 'Noto Sans', system-ui, sans-serif; border-radius: 0; cursor: pointer; transition: background 150ms ease-out; } .ds-btn-d { background: var(--red, #D7261E); border: 1px solid var(--red, #D7261E); color: #fff; } .ds-btn-d:hover { background: var(--red-ink, #B01E17); } .ds-btn-q { background: var(--paper, #fff); border: 1px solid var(--line, #C9CDD3); color: var(--ink, #111316); } .ds-btn-q:hover { border-color: var(--ink, #111316); } .ds-btn-d:focus-visible, .ds-btn-q:focus-visible { outline: 2px solid var(--focus, #1D5FD1); outline-offset: 1px; }"
+    },
+    {
+      "name": "Section Nav",
+      "kind": "nav",
+      "refersTo": "nav-tab",
+      "description": "Grey tab row with live count badges; active tab is white with a red cap.",
+      "html": "<nav class=\"ds-n2\"><a class=\"on\" href=\"#\">Map <span class=\"ds-cnt\">9</span></a><a href=\"#\">Assets <span class=\"ds-cnt bad\">2 lost</span></a><a href=\"#\">Receivers <span class=\"ds-cnt\">4/4</span></a></nav>",
+      "css": ".ds-n2 { display: flex; height: 34px; background: var(--grey, #E6E8EB); border-bottom: 1px solid var(--line, #C9CDD3); font: 500 13px 'Noto Sans', system-ui, sans-serif; } .ds-n2 a { display: flex; align-items: center; gap: 6px; padding: 0 16px; color: var(--ink, #111316); text-decoration: none; border-right: 1px solid var(--line, #C9CDD3); } .ds-n2 a:first-child { border-left: 1px solid var(--line, #C9CDD3); } .ds-n2 a:hover { background: var(--grey-2, #F3F4F6); } .ds-n2 a.on { background: var(--paper, #fff); font-weight: 700; box-shadow: inset 0 3px 0 var(--red, #D7261E); } .ds-n2 a:focus-visible { outline: 2px solid var(--focus, #1D5FD1); outline-offset: -2px; } .ds-cnt { min-width: 18px; padding: 0 5px; background: var(--ink, #111316); color: #fff; font-size: 11px; font-weight: 700; line-height: 17px; text-align: center; } .ds-cnt.bad { background: var(--red, #D7261E); }"
+    },
+    {
+      "name": "Pill",
+      "kind": "chip",
+      "refersTo": "pill",
+      "description": "Top-bar status pill with dot; bad variant turns red tint.",
+      "html": "<span class=\"ds-pill\"><i class=\"ds-dot ok\"></i>Live</span> <span class=\"ds-pill bad\">Receivers 3 / 4 online</span>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border: 1px solid var(--line, #C9CDD3); background: var(--paper, #fff); font: 700 12px 'Noto Sans', system-ui, sans-serif; color: var(--ink, #111316); } .ds-pill.bad { color: var(--red-ink, #B01E17); border-color: var(--red, #D7261E); background: var(--red-tint, #FCEBEA); } .ds-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ink-3, #6B7179); } .ds-dot.ok { background: var(--ok, #1E7F3C); }"
+    },
+    {
+      "name": "Inline Edit",
+      "kind": "input",
+      "refersTo": "input-inline",
+      "description": "Borderless text field that shows a hairline on hover and an ink border with blue halo on focus.",
+      "html": "<input class=\"ds-edit\" placeholder=\"Name this tag\" />",
+      "css": ".ds-edit { border: 1px solid transparent; background: transparent; padding: 3px 6px; min-width: 160px; font: 400 13px 'Noto Sans', system-ui, sans-serif; color: var(--ink, #111316); border-radius: 0; } .ds-edit:hover { border-color: var(--line, #C9CDD3); } .ds-edit:focus { border-color: var(--ink, #111316); background: var(--paper, #fff); outline: none; box-shadow: 0 0 0 2px var(--sel, #EAF1FC); } .ds-edit::placeholder { color: var(--ink-3, #6B7179); }"
+    },
+    {
+      "name": "Map Tag Markers",
+      "kind": "custom",
+      "description": "Located dot with dashed uncertainty circle, distance-only hollow marker on a dashed ring, lost red square in a dashed red ring.",
+      "html": "<svg class=\"ds-fp\" viewBox=\"0 0 240 80\" width=\"240\" height=\"80\"><circle class=\"unc\" cx=\"40\" cy=\"40\" r=\"22\"/><circle class=\"dot\" cx=\"40\" cy=\"40\" r=\"5\"/><circle class=\"ring\" cx=\"120\" cy=\"40\" r=\"22\"/><circle class=\"mk\" cx=\"142\" cy=\"40\" r=\"5\"/><circle class=\"lr\" cx=\"200\" cy=\"40\" r=\"11\"/><rect class=\"lost\" x=\"195\" y=\"35\" width=\"10\" height=\"10\"/></svg>",
+      "css": ".ds-fp { background: #fff; } .ds-fp .unc { fill: rgba(17,19,22,0.04); stroke: var(--ink, #111316); stroke-width: 1; stroke-dasharray: 3 3; } .ds-fp .dot { fill: var(--ink, #111316); stroke: #fff; stroke-width: 1.5; } .ds-fp .ring { fill: none; stroke: var(--ink-3, #6B7179); stroke-width: 1; stroke-dasharray: 3 4; } .ds-fp .mk { fill: #fff; stroke: var(--ink, #111316); stroke-width: 2.5; } .ds-fp .lr { fill: none; stroke: var(--red, #D7261E); stroke-width: 1.5; stroke-dasharray: 2 3; } .ds-fp .lost { fill: var(--red, #D7261E); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ruled Control Sheet",
+    "overview": "Everything that matters sits on one screen, packed into tight modules ruled off by hairlines, the way a dense Japanese portal or a printed control sheet packs a page. White ground, black ink, cool grey heads, and one utility red that marks module tabs, the active section and anything lost. The density is the point: an operator should read where every tag is, which receivers are up and what just happened without scrolling or opening a panel.\n\nSurfaces are flat paper. Structure comes from rules (1px hairlines, 1px black rules under table heads and the top bar) and from grey fills, never from shadow, blur, translucency or rounding. Figures are set heavy (900) so counts read from across a room; everything else is 12 to 13px.\n\nThis world replaced an earlier frosted-glass direction. Nothing from it carries over except the map conventions in Components.",
+    "keyCharacteristics": [
+      "Square corners everywhere; the only round shapes are 7-8px status dots and map tag dots.",
+      "Every module wears a solid red tab head on a grey strip.",
+      "Section tabs carry live counts; a count turns red when something is wrong.",
+      "Numbers use tabular figures throughout.",
+      "No shadows, no blur, no gradients."
+    ],
+    "rules": [
+      { "name": "The Red Means Structure Or Lost Rule", "body": "Red marks module tabs, the active section, lost tags, offline receivers and destructive actions. It never decorates, and it never marks \"uncertain\" (that is amber).", "section": "colors" },
+      { "name": "The Grey Zones Rule", "body": "Map zones are tinted only in ink greys (#4F555D, #111316 at 6% fill, 35% stroke). Colour on the map belongs to state: amber for ambiguous, red for lost.", "section": "colors" },
+      { "name": "The Heavy Figures Rule", "body": "A number an operator reads at a glance is 900 weight; prose and labels never are.", "section": "typography" },
+      { "name": "The Paper Sheet Rule", "body": "If a surface needs to stand apart, give it a hairline or a grey fill, never a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put every block of content in a Module with a red tab head.",
+      "Do keep corners square (0px) and separate surfaces with hairlines (#C9CDD3) or grey fills.",
+      "Do set glanceable numbers at 900 weight with tabular figures.",
+      "Do keep module gaps and page padding at 8px.",
+      "Do put live counts on section tabs, red when something needs attention.",
+      "Do keep amber for \"uncertain\" and red for \"lost / offline / destructive\"."
+    ],
+    "donts": [
+      "Don't use shadows for elevation, blur, translucency, gradients or rounded corners.",
+      "Don't colour map zones; they stay grey.",
+      "Don't draw a lost tag as a located dot or give it a position; it sits beside its last receiver.",
+      "Don't fall back to airy KPI cards; counts live in a ruled strip inside a module.",
+      "Don't set text lighter than Slate (#6B7179) on white."
+    ]
+  }
+}
